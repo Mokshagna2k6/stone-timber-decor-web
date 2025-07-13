@@ -1,19 +1,19 @@
 // Import generated images
-import oakTable from '../assets/oak-dining-table.jpg';
-import limestonePanel from '../assets/limestone-panels.jpg';
-import reclaimedArt from '../assets/reclaimed-wood-art.jpg';
-import graniteTable from '../assets/granite-coffee-table.jpg';
-import cedarPlanks from '../assets/cedar-planks.jpg';
-import slateMosaic from '../assets/slate-mosaic.jpg';
-import floatingShelves from '../assets/floating-shelves.jpg';
-import marbleConsole from '../assets/marble-console.jpg';
+import wirelessHeadphones from '../assets/wireless-headphones.jpg';
+import securityCamera from '../assets/security-camera.jpg';
+import robotVacuum from '../assets/robot-vacuum.jpg';
+import smartTV from '../assets/smart-tv.jpg';
+import bluetoothSpeaker from '../assets/bluetooth-speaker.jpg';
+import airPurifier from '../assets/air-purifier.jpg';
+import electricKettle from '../assets/electric-kettle.jpg';
+import fitnessTracker from '../assets/fitness-tracker.jpg';
 
 export interface Product {
   id: string;
   name: string;
   price: number;
   description: string;
-  category: 'Timber' | 'Stone' | 'Wall Decor' | 'Tabletops';
+  category: 'Electronics' | 'Home Appliances' | 'Audio' | 'Smart Home';
   imageUrl: string;
   images?: string[];
   featured?: boolean;
@@ -23,81 +23,81 @@ export interface Product {
 export const products: Product[] = [
   {
     id: '1',
-    name: 'Rustic Oak Dining Table',
-    price: 899,
-    description: 'Handcrafted from solid oak wood, this dining table features a natural live edge and rustic finish. Perfect for family gatherings and entertaining guests.',
-    category: 'Tabletops',
-    imageUrl: oakTable,
-    images: [oakTable, oakTable, oakTable],
+    name: 'Premium Wireless Headphones',
+    price: 12999,
+    description: 'High-quality noise-canceling wireless headphones with premium sound quality and long battery life. Perfect for music lovers and professionals.',
+    category: 'Audio',
+    imageUrl: wirelessHeadphones,
+    images: [wirelessHeadphones, wirelessHeadphones, wirelessHeadphones],
     featured: true,
     trending: true
   },
   {
     id: '2',
-    name: 'Limestone Wall Panel Set',
-    price: 299,
-    description: 'Natural limestone panels perfect for accent walls. Each panel is unique with beautiful natural textures and color variations.',
-    category: 'Stone',
-    imageUrl: limestonePanel,
-    images: [limestonePanel, limestonePanel],
+    name: 'Smart Security Camera System',
+    price: 8999,
+    description: 'Advanced home security camera with HD recording, night vision, and smartphone connectivity. Monitor your home from anywhere.',
+    category: 'Smart Home',
+    imageUrl: securityCamera,
+    images: [securityCamera, securityCamera],
     featured: true
   },
   {
     id: '3',
-    name: 'Reclaimed Wood Wall Art',
-    price: 149,
-    description: 'Artistic wall piece made from reclaimed barn wood. Each piece tells a story with its weathered patina and natural character.',
-    category: 'Wall Decor',
-    imageUrl: reclaimedArt,
-    images: [reclaimedArt, reclaimedArt],
+    name: 'Robot Vacuum Cleaner',
+    price: 24999,
+    description: 'Intelligent robotic vacuum with smart mapping, app control, and powerful suction. Keep your home clean effortlessly.',
+    category: 'Home Appliances',
+    imageUrl: robotVacuum,
+    images: [robotVacuum, robotVacuum],
     trending: true
   },
   {
     id: '4',
-    name: 'Granite Coffee Table',
-    price: 649,
-    description: 'Elegant coffee table featuring a polished granite top with natural veining. Supported by a sleek metal base for modern appeal.',
-    category: 'Tabletops',
-    imageUrl: graniteTable,
-    images: [graniteTable, graniteTable],
+    name: 'Smart LED TV 55"',
+    price: 45999,
+    description: '4K Ultra HD Smart TV with built-in streaming apps, voice control, and stunning picture quality for the ultimate viewing experience.',
+    category: 'Electronics',
+    imageUrl: smartTV,
+    images: [smartTV, smartTV],
     featured: true
   },
   {
     id: '5',
-    name: 'Cedar Plank Collection',
-    price: 89,
-    description: 'Premium cedar planks perfect for DIY projects. Naturally resistant to insects and weather, ideal for outdoor applications.',
-    category: 'Timber',
-    imageUrl: cedarPlanks,
-    images: [cedarPlanks]
+    name: 'Portable Bluetooth Speaker',
+    price: 4999,
+    description: 'High-fidelity portable speaker with deep bass, waterproof design, and 12-hour battery life. Perfect for outdoor adventures.',
+    category: 'Audio',
+    imageUrl: bluetoothSpeaker,
+    images: [bluetoothSpeaker]
   },
   {
     id: '6',
-    name: 'Slate Tile Mosaic',
-    price: 199,
-    description: 'Handpicked slate tiles arranged in beautiful mosaic patterns. Perfect for backsplashes, feature walls, or outdoor spaces.',
-    category: 'Stone',
-    imageUrl: slateMosaic,
-    images: [slateMosaic, slateMosaic],
+    name: 'Smart Air Purifier',
+    price: 15999,
+    description: 'HEPA filter air purifier with smart sensors, app control, and real-time air quality monitoring for healthier indoor air.',
+    category: 'Home Appliances',
+    imageUrl: airPurifier,
+    images: [airPurifier, airPurifier],
     trending: true
   },
   {
     id: '7',
-    name: 'Floating Timber Shelves',
-    price: 129,
-    description: 'Set of three floating shelves made from sustainable walnut. Clean lines and invisible mounting for a modern minimalist look.',
-    category: 'Wall Decor',
-    imageUrl: floatingShelves,
-    images: [floatingShelves, floatingShelves]
+    name: 'Electric Kettle Premium',
+    price: 3999,
+    description: 'Stainless steel electric kettle with temperature control, LED display, and rapid boiling technology for perfect beverages.',
+    category: 'Home Appliances',
+    imageUrl: electricKettle,
+    images: [electricKettle, electricKettle]
   },
   {
     id: '8',
-    name: 'Marble Console Table',
-    price: 749,
-    description: 'Luxurious console table featuring Carrara marble top with subtle veining. Perfect for entryways or as a statement piece.',
-    category: 'Tabletops',
-    imageUrl: marbleConsole,
-    images: [marbleConsole, marbleConsole, marbleConsole],
+    name: 'Smart Fitness Tracker',
+    price: 6999,
+    description: 'Advanced fitness tracker with heart rate monitoring, GPS, sleep tracking, and smartphone notifications for active lifestyles.',
+    category: 'Electronics',
+    imageUrl: fitnessTracker,
+    images: [fitnessTracker, fitnessTracker, fitnessTracker],
     trending: true
   }
 ];

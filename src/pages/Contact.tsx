@@ -29,7 +29,7 @@ const Contact = () => {
   };
 
   const handleWhatsApp = () => {
-    const message = "Hi! I'm interested in your timber and stone products.";
+    const message = "Hi! I'm interested in your electronics and gadgets.";
     const phoneNumber = "1234567890"; // Replace with actual WhatsApp number
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
@@ -79,7 +79,7 @@ const Contact = () => {
                     <Mail className="h-5 w-5 text-primary mt-1" />
                     <div>
                       <h3 className="font-semibold text-foreground">Email</h3>
-                      <p className="text-muted-foreground">info@timbernstone.com</p>
+                      <p className="text-muted-foreground">info@gadgetsgo.com</p>
                       <p className="text-sm text-muted-foreground">We'll respond within 24 hours</p>
                     </div>
                   </div>

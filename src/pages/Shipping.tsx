@@ -16,7 +16,7 @@ const Shipping = () => {
             Shipping & Returns
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            We're committed to getting your beautiful timber and stone pieces to you safely and efficiently.
+            We're committed to getting your premium electronics and gadgets to you safely and efficiently.
           </p>
         </div>
 
@@ -63,20 +63,20 @@ const Shipping = () => {
                 <h3 className="font-semibold text-foreground mb-3">Shipping Costs</h3>
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Orders under $200:</span>
-                    <span className="text-foreground">$25</span>
+                    <span className="text-muted-foreground">Orders under ₹10,000:</span>
+                    <span className="text-foreground">₹500</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Orders $200-$499:</span>
-                    <span className="text-foreground">$15</span>
+                    <span className="text-muted-foreground">Orders ₹10,000-₹24,999:</span>
+                    <span className="text-foreground">₹250</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground font-medium">Orders $500+:</span>
+                    <span className="text-muted-foreground font-medium">Orders ₹25,000+:</span>
                     <span className="text-primary font-medium">FREE</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Express shipping:</span>
-                    <span className="text-foreground">+$20</span>
+                    <span className="text-foreground">+₹300</span>
                   </div>
                 </div>
               </div>
@@ -86,7 +86,7 @@ const Shipping = () => {
               <div>
                 <h3 className="font-semibold text-foreground mb-3">Special Handling</h3>
                 <p className="text-sm text-muted-foreground">
-                  Large or fragile items may require special handling. Additional shipping costs 
+                  Large electronics and appliances may require special handling. Additional shipping costs 
                   and delivery timeframes will be communicated before order confirmation.
                 </p>
               </div>
@@ -206,7 +206,7 @@ const Shipping = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
-                href="mailto:info@timbernstone.com"
+                href="mailto:info@gadgetsgo.com"
                 className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
               >
                 Email Support

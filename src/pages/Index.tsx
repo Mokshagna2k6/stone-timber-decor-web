@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Leaf, Mountain, Palette, Table } from 'lucide-react';
+import { ArrowRight, Smartphone, Home, Volume2, Wifi } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import ProductCard from '@/components/ProductCard';
@@ -13,28 +13,28 @@ const Index = () => {
 
   const categories = [
     {
-      name: 'Timber',
-      description: 'Premium wood products for your home',
-      icon: Leaf,
-      href: '/products?category=Timber'
+      name: 'Electronics',
+      description: 'Latest consumer electronics and gadgets',
+      icon: Smartphone,
+      href: '/products?category=Electronics'
     },
     {
-      name: 'Stone',
-      description: 'Natural stone elements and decor',
-      icon: Mountain,
-      href: '/products?category=Stone'
+      name: 'Home Appliances',
+      description: 'Smart appliances for modern living',
+      icon: Home,
+      href: '/products?category=Home Appliances'
     },
     {
-      name: 'Wall Decor',
-      description: 'Beautiful pieces to transform your walls',
-      icon: Palette,
-      href: '/products?category=Wall Decor'
+      name: 'Audio',
+      description: 'Premium audio equipment and speakers',
+      icon: Volume2,
+      href: '/products?category=Audio'
     },
     {
-      name: 'Tabletops',
-      description: 'Stunning surfaces for dining and display',
-      icon: Table,
-      href: '/products?category=Tabletops'
+      name: 'Smart Home',
+      description: 'Connected devices for intelligent homes',
+      icon: Wifi,
+      href: '/products?category=Smart Home'
     }
   ];
 
@@ -47,11 +47,11 @@ const Index = () => {
         <div className="container mx-auto px-4 py-24 md:py-32">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Natural Beauty for Your Home
+              Smart Living for Modern Homes
             </h1>
             <p className="text-lg md:text-xl mb-8 text-primary-foreground/90">
-              Discover our curated collection of premium timber and stone home decor. 
-              Each piece is carefully selected to bring natural elegance to your space.
+              Discover our curated collection of premium electronics and smart home gadgets. 
+              Each product is carefully selected to enhance your modern lifestyle.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" variant="secondary" className="bg-background text-primary hover:bg-background/90">
@@ -77,7 +77,7 @@ const Index = () => {
               Explore Our Categories
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              From rustic timber pieces to elegant stone accents, find the perfect elements to enhance your home.
+              From cutting-edge electronics to smart home devices, find the perfect technology to enhance your lifestyle.
             </p>
           </div>
 

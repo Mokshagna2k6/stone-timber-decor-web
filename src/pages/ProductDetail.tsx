@@ -35,8 +35,8 @@ const ProductDetail = () => {
   const images = product.images || [product.imageUrl];
 
   const handleBuyOnShopify = () => {
-    // In a real implementation, this would redirect to Shopify
-    window.alert('Redirecting to Shopify checkout...');
+    // In a real implementation, this would redirect to checkout
+    window.alert('Redirecting to checkout...');
   };
 
   return (
@@ -117,7 +117,7 @@ const ProductDetail = () => {
 
             <div className="border-t border-b border-border py-6">
               <div className="text-4xl font-bold text-primary mb-2">
-                ${product.price}
+                ₹{product.price.toLocaleString('en-IN')}
               </div>
               <p className="text-sm text-muted-foreground">
                 Price includes all taxes and fees
@@ -131,7 +131,7 @@ const ProductDetail = () => {
                 onClick={handleBuyOnShopify}
               >
                 <ShoppingCart className="mr-2 h-5 w-5" />
-                Buy on Shopify
+                Buy Now
               </Button>
               
               <div className="flex gap-2">
@@ -156,20 +156,21 @@ const ProductDetail = () => {
                     <span className="text-foreground">{product.category}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Material:</span>
+                    <span className="text-muted-foreground">Type:</span>
                     <span className="text-foreground">
-                      {product.category === 'Timber' ? 'Premium Wood' : 
-                       product.category === 'Stone' ? 'Natural Stone' : 
-                       'Mixed Materials'}
+                      {product.category === 'Electronics' ? 'Consumer Electronics' : 
+                       product.category === 'Home Appliances' ? 'Smart Appliances' : 
+                       product.category === 'Audio' ? 'Audio Equipment' :
+                       'Smart Home Device'}
                     </span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Finish:</span>
-                    <span className="text-foreground">Hand-finished</span>
+                    <span className="text-muted-foreground">Warranty:</span>
+                    <span className="text-foreground">1 Year Manufacturer Warranty</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-muted-foreground">Care:</span>
-                    <span className="text-foreground">See care instructions</span>
+                    <span className="text-muted-foreground">Support:</span>
+                    <span className="text-foreground">24/7 Customer Support</span>
                   </div>
                 </div>
               </CardContent>
@@ -180,8 +181,8 @@ const ProductDetail = () => {
               <CardContent className="p-6">
                 <h3 className="font-semibold text-foreground mb-4">Shipping & Returns</h3>
                 <div className="space-y-2 text-sm text-muted-foreground">
-                  <p>• Free shipping on orders over $500</p>
-                  <p>• Standard delivery: 5-7 business days</p>
+                  <p>• Free shipping on orders over ₹25,000</p>
+                  <p>• Standard delivery: 3-5 business days</p>
                   <p>• Express delivery available</p>
                   <p>• 30-day return policy</p>
                   <Link to="/shipping" className="text-primary hover:underline text-sm">

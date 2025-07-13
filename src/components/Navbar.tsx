@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ShoppingBag } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import logo from '@/assets/gadgets-go-logo.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,10 +23,8 @@ const Navbar = () => {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded bg-primary">
-              <ShoppingBag className="h-5 w-5 text-primary-foreground" />
-            </div>
-            <span className="text-xl font-bold text-primary">Timber n Stone</span>
+            <img src={logo} alt="Gadgets Go" className="h-8 w-8" />
+            <span className="text-xl font-bold text-primary">Gadgets Go</span>
           </Link>
 
           {/* Desktop Navigation */}
