@@ -6,6 +6,7 @@ import ProductCard from '@/components/ProductCard';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { getFeaturedProducts, getTrendingProducts } from '@/data/products';
+import heroBanner from '@/assets/hero-banner.jpg';
 
 const Index = () => {
   const featuredProducts = getFeaturedProducts();
@@ -35,6 +36,12 @@ const Index = () => {
       description: 'Connected devices for intelligent homes',
       icon: Wifi,
       href: '/products?category=Smart Home'
+    },
+    {
+      name: 'Daily Needs',
+      description: 'Essential gadgets for everyday life',
+      icon: Home,
+      href: '/products?category=Daily Needs'
     }
   ];
 
@@ -43,8 +50,12 @@ const Index = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative gradient-hero text-primary-foreground">
-        <div className="container mx-auto px-4 py-24 md:py-32">
+      <section className="relative gradient-hero text-primary-foreground overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+          style={{ backgroundImage: `url(${heroBanner})` }}
+        />
+        <div className="relative container mx-auto px-4 py-24 md:py-32">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               Smart Living for Modern Homes
@@ -81,7 +92,7 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
             {categories.map((category) => (
               <Card key={category.name} className="hover-lift cursor-pointer border-0 product-card-shadow">
                 <Link to={category.href}>

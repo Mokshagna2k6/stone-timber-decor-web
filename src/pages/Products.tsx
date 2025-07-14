@@ -14,7 +14,7 @@ const Products = () => {
   const [selectedCategory, setSelectedCategory] = useState(searchParams.get('category') || 'All');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
 
-  const categories = ['All', 'Electronics', 'Home Appliances', 'Audio', 'Smart Home'];
+  const categories = ['All', 'Electronics', 'Home Appliances', 'Audio', 'Smart Home', 'Daily Needs'];
 
   const filteredProducts = useMemo(() => {
     if (selectedCategory === 'All') {

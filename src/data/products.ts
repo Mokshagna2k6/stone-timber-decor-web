@@ -7,13 +7,17 @@ import bluetoothSpeaker from '../assets/bluetooth-speaker.jpg';
 import airPurifier from '../assets/air-purifier.jpg';
 import electricKettle from '../assets/electric-kettle.jpg';
 import fitnessTracker from '../assets/fitness-tracker.jpg';
+import mosquitoKillerLamp from '../assets/mosquito-killer-lamp.jpg';
+import usbElectricFan from '../assets/usb-electric-fan.jpg';
+import neckFan from '../assets/neck-fan.jpg';
+import waterproofSpeaker from '../assets/waterproof-speaker.jpg';
 
 export interface Product {
   id: string;
   name: string;
   price: number;
   description: string;
-  category: 'Electronics' | 'Home Appliances' | 'Audio' | 'Smart Home';
+  category: 'Electronics' | 'Home Appliances' | 'Audio' | 'Smart Home' | 'Daily Needs';
   imageUrl: string;
   images?: string[];
   featured?: boolean;
@@ -98,6 +102,47 @@ export const products: Product[] = [
     category: 'Electronics',
     imageUrl: fitnessTracker,
     images: [fitnessTracker, fitnessTracker, fitnessTracker],
+    trending: true
+  },
+  {
+    id: '9',
+    name: 'Electronic Mosquito Killer Lamp',
+    price: 2499,
+    description: 'UV LED mosquito killer lamp with elegant design. Safe, chemical-free pest control for your home with modern aesthetics.',
+    category: 'Daily Needs',
+    imageUrl: mosquitoKillerLamp,
+    images: [mosquitoKillerLamp, mosquitoKillerLamp],
+    featured: true
+  },
+  {
+    id: '10',
+    name: 'USB Electric Fan Air Cooler',
+    price: 1999,
+    description: 'Compact desktop USB fan with multiple speed settings and LED display. Perfect for office and personal cooling needs.',
+    category: 'Daily Needs',
+    imageUrl: usbElectricFan,
+    images: [usbElectricFan, usbElectricFan],
+    trending: true
+  },
+  {
+    id: '11',
+    name: 'Portable Bladeless Neck Fan',
+    price: 3499,
+    description: 'Innovative wearable neck fan with bladeless design. Rechargeable and hands-free personal cooling for active lifestyles.',
+    category: 'Daily Needs',
+    imageUrl: neckFan,
+    images: [neckFan, neckFan, neckFan],
+    featured: true,
+    trending: true
+  },
+  {
+    id: '12',
+    name: 'Waterproof Bluetooth Speaker',
+    price: 7999,
+    description: 'Large suction cup waterproof Bluetooth speaker with powerful bass. Perfect for shower, pool, and outdoor adventures.',
+    category: 'Audio',
+    imageUrl: waterproofSpeaker,
+    images: [waterproofSpeaker, waterproofSpeaker],
     trending: true
   }
 ];
