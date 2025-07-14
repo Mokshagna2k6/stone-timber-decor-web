@@ -1,17 +1,78 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, ShoppingCart, Heart, Share2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import ReviewsList from '@/components/ReviewsList';
+import AddReview from '@/components/AddReview';
+import ReviewStars from '@/components/ReviewStars';
 import { getProductById } from '@/data/products';
+import { Review, ReviewSummary } from '@/types/review';
 
 const ProductDetail = () => {
   const { id } = useParams();
   const product = getProductById(id || '');
   const [selectedImage, setSelectedImage] = useState(0);
+  const [reviews, setReviews] = useState<Review[]>([]);
+  const [reviewSummary, setReviewSummary] = useState<ReviewSummary>({
+    averageRating: 0,
+    totalReviews: 0,
+    ratingDistribution: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 }
+  });
+
+  useEffect(() => {
+    if (product) {
+      loadReviews();
+    }
+  }, [product]);
+
+  const loadReviews = () => {
+    try {
+      const allReviews = JSON.parse(localStorage.getItem('productReviews') || '[]');
+      const productReviews = allReviews.filter((review: Review) => review.productId === id);
+      
+      setReviews(productReviews);
+      calculateReviewSummary(productReviews);
+    } catch (error) {
+      console.error('Error loading reviews:', error);
+      setReviews([]);
+    }
+  };
+
+  const calculateReviewSummary = (reviewList: Review[]) => {
+    if (reviewList.length === 0) {
+      setReviewSummary({
+        averageRating: 0,
+        totalReviews: 0,
+        ratingDistribution: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 }
+      });
+      return;
+    }
+
+    const totalRating = reviewList.reduce((sum, review) => sum + review.rating, 0);
+    const averageRating = totalRating / reviewList.length;
+    
+    const distribution = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
+    reviewList.forEach(review => {
+      distribution[review.rating as keyof typeof distribution]++;
+    });
+
+    setReviewSummary({
+      averageRating,
+      totalReviews: reviewList.length,
+      ratingDistribution: distribution
+    });
+  };
+
+  const handleReviewAdded = (newReview: Review) => {
+    const updatedReviews = [...reviews, newReview];
+    setReviews(updatedReviews);
+    calculateReviewSummary(updatedReviews);
+  };
 
   if (!product) {
     return (
@@ -116,8 +177,18 @@ const ProductDetail = () => {
             </div>
 
             <div className="border-t border-b border-border py-6">
-              <div className="text-4xl font-bold text-primary mb-2">
-                ₹{product.price.toLocaleString('en-IN')}
+              <div className="flex items-center gap-4 mb-4">
+                <div className="text-4xl font-bold text-primary">
+                  ₹{product.price.toLocaleString('en-IN')}
+                </div>
+                {reviewSummary.totalReviews > 0 && (
+                  <div className="flex items-center gap-2">
+                    <ReviewStars rating={Math.round(reviewSummary.averageRating)} size="sm" />
+                    <span className="text-sm text-muted-foreground">
+                      ({reviewSummary.averageRating.toFixed(1)}) {reviewSummary.totalReviews} review{reviewSummary.totalReviews !== 1 && 's'}
+                    </span>
+                  </div>
+                )}
               </div>
               <p className="text-sm text-muted-foreground">
                 Price includes all taxes and fees
@@ -161,6 +232,7 @@ const ProductDetail = () => {
                       {product.category === 'Electronics' ? 'Consumer Electronics' : 
                        product.category === 'Home Appliances' ? 'Smart Appliances' : 
                        product.category === 'Audio' ? 'Audio Equipment' :
+                       product.category === 'Daily Needs' ? 'Daily Essential Gadgets' :
                        'Smart Home Device'}
                     </span>
                   </div>
@@ -192,6 +264,29 @@ const ProductDetail = () => {
               </CardContent>
             </Card>
           </div>
+        </div>
+
+        {/* Reviews Section */}
+        <div className="mt-16">
+          <Tabs defaultValue="reviews" className="w-full">
+            <TabsList className="grid w-full grid-cols-2">
+              <TabsTrigger value="reviews">
+                Reviews ({reviewSummary.totalReviews})
+              </TabsTrigger>
+              <TabsTrigger value="write-review">Write a Review</TabsTrigger>
+            </TabsList>
+            
+            <TabsContent value="reviews" className="mt-6">
+              <ReviewsList reviews={reviews} summary={reviewSummary} />
+            </TabsContent>
+            
+            <TabsContent value="write-review" className="mt-6">
+              <AddReview 
+                productId={product.id} 
+                onReviewAdded={handleReviewAdded}
+              />
+            </TabsContent>
+          </Tabs>
         </div>
       </div>
 

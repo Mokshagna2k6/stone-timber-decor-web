@@ -43,8 +43,7 @@ export const products: Product[] = [
     description: 'Advanced home security camera with HD recording, night vision, and smartphone connectivity. Monitor your home from anywhere.',
     category: 'Smart Home',
     imageUrl: securityCamera,
-    images: [securityCamera, securityCamera],
-    featured: true
+    images: [securityCamera, securityCamera]
   },
   {
     id: '3',
@@ -82,8 +81,7 @@ export const products: Product[] = [
     description: 'HEPA filter air purifier with smart sensors, app control, and real-time air quality monitoring for healthier indoor air.',
     category: 'Home Appliances',
     imageUrl: airPurifier,
-    images: [airPurifier, airPurifier],
-    trending: true
+    images: [airPurifier, airPurifier]
   },
   {
     id: '7',
@@ -101,8 +99,7 @@ export const products: Product[] = [
     description: 'Advanced fitness tracker with heart rate monitoring, GPS, sleep tracking, and smartphone notifications for active lifestyles.',
     category: 'Electronics',
     imageUrl: fitnessTracker,
-    images: [fitnessTracker, fitnessTracker, fitnessTracker],
-    trending: true
+    images: [fitnessTracker, fitnessTracker, fitnessTracker]
   },
   {
     id: '9',
@@ -121,8 +118,7 @@ export const products: Product[] = [
     description: 'Compact desktop USB fan with multiple speed settings and LED display. Perfect for office and personal cooling needs.',
     category: 'Daily Needs',
     imageUrl: usbElectricFan,
-    images: [usbElectricFan, usbElectricFan],
-    trending: true
+    images: [usbElectricFan, usbElectricFan]
   },
   {
     id: '11',
@@ -142,8 +138,7 @@ export const products: Product[] = [
     description: 'Large suction cup waterproof Bluetooth speaker with powerful bass. Perfect for shower, pool, and outdoor adventures.',
     category: 'Audio',
     imageUrl: waterproofSpeaker,
-    images: [waterproofSpeaker, waterproofSpeaker],
-    trending: true
+    images: [waterproofSpeaker, waterproofSpeaker]
   }
 ];
 
