@@ -110,10 +110,11 @@
 @layer components {
   .gradient-hero {
     background: linear-gradient(135deg, 
-      hsl(215 85% 25%) 0%, 
-      hsl(215 100% 35%) 30%, 
-      hsl(200 100% 45%) 70%, 
-      hsl(215 100% 55%) 100%
+      hsl(215 85% 20%) 0%, 
+      hsl(230 95% 25%) 25%, 
+      hsl(200 100% 35%) 50%, 
+      hsl(185 100% 40%) 75%, 
+      hsl(170 85% 45%) 100%
     );
     position: relative;
   }
@@ -125,13 +126,45 @@
     background: linear-gradient(135deg, 
       transparent 0%, 
       rgba(0,0,0,0.1) 50%, 
-      rgba(0,0,0,0.2) 100%
+      rgba(0,0,0,0.15) 100%
     );
     pointer-events: none;
   }
   
+  .gradient-section {
+    background: linear-gradient(180deg, 
+      hsl(var(--background)) 0%, 
+      hsl(210 20% 96%) 50%, 
+      hsl(var(--background)) 100%
+    );
+  }
+  
+  .featured-section {
+    background: linear-gradient(135deg, 
+      hsl(210 100% 97%) 0%, 
+      hsl(200 100% 95%) 50%, 
+      hsl(190 100% 97%) 100%
+    );
+  }
+  
+  .category-card-gradient {
+    background: linear-gradient(135deg, 
+      hsl(var(--card)) 0%, 
+      hsl(210 25% 98%) 100%
+    );
+    border: 1px solid hsl(var(--border));
+  }
+  
+  .category-icon-bg {
+    background: linear-gradient(135deg, 
+      hsl(var(--primary)) 0%, 
+      hsl(200 85% 45%) 100%
+    );
+  }
+  
   .product-card-shadow {
-    box-shadow: 0 4px 20px hsl(var(--primary) / 0.12);
+    box-shadow: 0 4px 20px hsl(var(--primary) / 0.12), 
+                0 1px 3px hsl(var(--primary) / 0.05);
   }
   
   .hover-lift {
@@ -141,6 +174,7 @@
   
   .hover-lift:hover {
     transform: translateY(-6px);
-    box-shadow: 0 12px 40px hsl(var(--primary) / 0.18);
+    box-shadow: 0 12px 40px hsl(var(--primary) / 0.18),
+                0 4px 12px hsl(200 85% 45% / 0.1);
   }
 }

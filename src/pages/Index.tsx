@@ -81,7 +81,7 @@ const Index = () => {
       </section>
 
       {/* Featured Categories */}
-      <section className="py-16 bg-background">
+      <section className="py-16 gradient-section">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -94,11 +94,11 @@ const Index = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
             {categories.map((category) => (
-              <Card key={category.name} className="hover-lift cursor-pointer border-0 product-card-shadow">
+              <Card key={category.name} className="hover-lift cursor-pointer border-0 product-card-shadow category-card-gradient">
                 <Link to={category.href}>
                   <CardContent className="p-6 text-center">
-                    <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-accent flex items-center justify-center">
-                      <category.icon className="h-8 w-8 text-primary" />
+                    <div className="w-16 h-16 mx-auto mb-4 rounded-full category-icon-bg flex items-center justify-center">
+                      <category.icon className="h-8 w-8 text-white" />
                     </div>
                     <h3 className="text-xl font-semibold text-foreground mb-2">
                       {category.name}
@@ -115,7 +115,7 @@ const Index = () => {
       </section>
 
       {/* Featured Products */}
-      <section className="py-16 bg-muted/50">
+      <section className="py-16 featured-section">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center mb-12">
             <div>
@@ -160,11 +160,11 @@ const Index = () => {
             </Button>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {trendingProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
+           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+             {trendingProducts.map((product) => (
+               <ProductCard key={product.id} product={product} />
+             ))}
+           </div>
         </div>
       </section>
 

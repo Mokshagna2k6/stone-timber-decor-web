@@ -138,7 +138,8 @@ export const products: Product[] = [
     description: 'Large suction cup waterproof Bluetooth speaker with powerful bass. Perfect for shower, pool, and outdoor adventures.',
     category: 'Audio',
     imageUrl: waterproofSpeaker,
-    images: [waterproofSpeaker, waterproofSpeaker]
+    images: [waterproofSpeaker, waterproofSpeaker],
+    trending: true
   }
 ];
 
